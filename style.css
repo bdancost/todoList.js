@@ -77,6 +77,10 @@ body {
   color: var(--primary-color);
 }
 
+.todo__item > input[type="checkbox"]:checked + div {
+  text-decoration: line-through;
+}
+
 .todo__item > input[type="text"] {
   border: none;
   width: 80%;
@@ -92,10 +96,6 @@ body {
   font: inherit;
 }
 
-.todo__item > input[type="checkbox"] + div {
-  text-decoration: line-through;
-}
-
 .todo__new-item {
   display: flex;
   background-color: #91c2e1;
@@ -104,8 +104,8 @@ body {
   justify-content: space-evenly;
   padding-bottom: 5px;
   box-shadow: 1px 1px 5px var(--secondary-color);
-  margin: 10px;
   font: inherit;
+  margin: 0 auto;
   border-radius: 10px;
   gap: 10px;
 }
@@ -113,7 +113,7 @@ body {
 .todo__new-item > input {
   background-color: #91c2e1;
   border: none;
-  width: 80%;
+  width: 90%;
   outline: none;
   font: inherit;
   border-radius: 10px;
@@ -122,7 +122,6 @@ body {
 .todo__new-item > input::placeholder {
   font-style: italic;
   font-weight: normal;
-  text-shadow: 1px 1px 5px var(--background-color);
   font-size: calc(1.1rem + 0.5vw);
   text-wrap: wrap;
   justify-content: center;
