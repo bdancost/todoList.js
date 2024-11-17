@@ -31,15 +31,27 @@ const atualizarTela = () => {
   banco.forEach((item, indice) => criarItem(item.tarefa, item.status, indice));
 };
 
+// Verifica se a tarefa já existe no banco
+const tarefaExiste = (texto) => {
+  const banco = getBanco();
+  return banco.some(
+    (item) => item.tarefa.toLowerCase() === texto.toLowerCase()
+  );
+};
+
 const inserirItem = (evento) => {
   const tecla = evento.key;
-  const texto = evento.target.value;
-  if (tecla === "Enter") {
-    const banco = getBanco();
-    banco.push({ tarefa: texto, status: "" });
-    setBanco(banco);
-    atualizarTela();
-    evento.target.value = "";
+  const texto = evento.target.value.trim(); //Remove espaços em branco do início e do fim
+  if (tecla === "Enter" && texto) {
+    if (tarefaExiste(texto)) {
+      alert("Essa tareja já existe! Por Favor, insira uma nova tarefa.");
+    } else {
+      const banco = getBanco();
+      banco.push({ tarefa: texto, status: "" });
+      setBanco(banco);
+      atualizarTela();
+    }
+    evento.target.value = ""; // Limpa o campo de entrada
   }
 };
 
@@ -67,6 +79,7 @@ const clickItem = (evento) => {
   }
 };
 
+// Adiciona eventos aos elementos
 document.getElementById("newItem").addEventListener("keypress", inserirItem);
 document.getElementById("todoList").addEventListener("click", clickItem);
 
