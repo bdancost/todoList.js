@@ -54,7 +54,8 @@ Esta aplicação é um simples _to-do list_ projetado para ajudar na organizaç�
 
 ## 🖼️ **Visual do Aplicativo**
 
-![Screenshot da Aplicação](https://via.placeholder.com/800x400.png?text=TODO+List+App+Preview)  
+![Screenshot da Aplicação]
+<img src="foto01.png">  
 _Imagem ilustrativa do projeto em execução._
 
 ---
